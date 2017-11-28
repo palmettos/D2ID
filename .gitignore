@@ -1,3 +1,4 @@
 *.pyc
 error.log
 config
+build/
