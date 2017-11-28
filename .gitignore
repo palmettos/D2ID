@@ -2,4 +2,16 @@
 error.log
 config
 build/
-bin/
+
+DiabloInterface/src/DiabloInterface/bin
+DiabloInterface/src/DiabloInterface/obj
+DiabloInterface/src/.vs
+DiabloInterface/src/DiabloInterface/DiabloInterface.csproj.user
+
+DiabloInterface/src/tests/bin
+DiabloInterface/src/tests/obj
+
+# Recommended ignores for Visual Studio NuGet
+*.nupkg
+**/packages/*
+!**/packages/build/
