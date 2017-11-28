@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface>
+  <object class="ttk.Frame" id="frame">
+    <property name="height">200</property>
+    <property name="width">400</property>
+    <layout>
+      <property name="column">0</property>
+      <property name="propagate">True</property>
+      <property name="row">0</property>
+      <rows>
+        <row id="0">
+          <property name="pad">0</property>
+        </row>
+      </rows>
+      <columns>
+        <column id="0">
+          <property name="pad">0</property>
+        </column>
+      </columns>
+    </layout>
+    <child>
+      <object class="ttk.Labelframe" id="credentials">
+        <property name="padding">0</property>
+        <property name="text" translatable="yes">Broadcast</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="ipady">3</property>
+          <property name="padx">10</property>
+          <property name="pady">5</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+          <rows>
+            <row id="0">
+              <property name="minsize">0</property>
+              <property name="pad">0</property>
+              <property name="weight">0</property>
+            </row>
+            <row id="1">
+              <property name="pad">0</property>
+            </row>
+            <row id="4">
+              <property name="pad">0</property>
+            </row>
+          </rows>
+          <columns>
+            <column id="0">
+              <property name="pad">0</property>
+            </column>
+          </columns>
+        </layout>
+        <child>
+          <object class="ttk.Frame" id="inner">
+            <property name="height">200</property>
+            <property name="width">200</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="padx">10</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+              <property name="sticky">w</property>
+            </layout>
+            <child>
+              <object class="ttk.Label" id="label_username">
+                <property name="text" translatable="yes">Channel name</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                  <property name="sticky">w</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Entry" id="text_username">
+                <property name="textvariable">string:username</property>
+                <property name="width">32</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="ipadx">0</property>
+                  <property name="ipady">0</property>
+                  <property name="pady">2</property>
+                  <property name="propagate">True</property>
+                  <property name="row">1</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="label_key">
+                <property name="text" translatable="yes">Extension key</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="propagate">True</property>
+                  <property name="row">2</property>
+                  <property name="sticky">w</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Entry" id="text_key">
+                <property name="show">*</property>
+                <property name="textvariable">string:key</property>
+                <property name="width">32</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="pady">2</property>
+                  <property name="propagate">True</property>
+                  <property name="row">3</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Button" id="button_connect">
+                <property name="command">connect</property>
+                <property name="state">disabled</property>
+                <property name="text" translatable="yes">Connect</property>
+                <property name="width">16</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="pady">5</property>
+                  <property name="propagate">True</property>
+                  <property name="row">4</property>
+                  <property name="sticky">w</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Checkbutton" id="check_remember_username">
+                <property name="offvalue">0</property>
+                <property name="onvalue">1</property>
+                <property name="state">disabled</property>
+                <property name="text" translatable="yes">Remember</property>
+                <property name="variable">string:remember_username</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="padx">0</property>
+                  <property name="propagate">True</property>
+                  <property name="row">4</property>
+                  <property name="sticky">e</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Text" id="message_log">
+            <property name="height">9</property>
+            <property name="padx">5</property>
+            <property name="pady">3</property>
+            <property name="relief">sunken</property>
+            <property name="setgrid">true</property>
+            <property name="state">disabled</property>
+            <property name="width">45</property>
+            <property name="wrap">word</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="ipady">0</property>
+              <property name="padx">10</property>
+              <property name="pady">5</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

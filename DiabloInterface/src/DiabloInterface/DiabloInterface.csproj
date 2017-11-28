@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{25BB3310-9BD7-4234-AF7D-9F7FB6870A20}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DiabloInterface</RootNamespace>
+    <AssemblyName>DiabloInterface</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>0.2.3.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Diablo II_101.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>App.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsInput, Version=1.0.4.0, Culture=neutral, PublicKeyToken=9b287f7dc5073cad, processorArchitecture=MSIL">
+      <HintPath>..\packages\InputSimulator.1.0.4.0\lib\net20\WindowsInput.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoSplit.cs" />
+    <Compile Include="AutoSplitFactory.cs" />
+    <Compile Include="D2\D2QuestHelper.cs" />
+    <Compile Include="D2\Readers\RangeStatData.cs" />
+    <Compile Include="D2\Readers\UnitReader.cs" />
+    <Compile Include="D2\Readers\StringLookupTable.cs" />
+    <Compile Include="D2\Readers\InventoryReader.cs" />
+    <Compile Include="D2\Struct\D2CharacterStats.cs" />
+    <Compile Include="D2\Struct\D2Client.cs" />
+    <Compile Include="D2\Struct\D2Game.cs" />
+    <Compile Include="D2\Struct\D2GlobalData.cs" />
+    <Compile Include="D2\Struct\D2ItemModifier.cs" />
+    <Compile Include="D2\D2MemoryTable.cs" />
+    <Compile Include="D2\D2ItemStatCostTxt.cs" />
+    <Compile Include="D2\Readers\ItemReader.cs" />
+    <Compile Include="D2\Struct\D2Inventory.cs" />
+    <Compile Include="D2\Struct\D2ItemData.cs" />
+    <Compile Include="D2\Struct\D2ItemDescription.cs" />
+    <Compile Include="D2\Struct\D2ItemStatCost.cs" />
+    <Compile Include="D2\Struct\D2LowQualityItemDescription.cs" />
+    <Compile Include="D2\Struct\D2PlayerData.cs" />
+    <Compile Include="D2\Struct\D2SetDescription.cs" />
+    <Compile Include="D2\Struct\D2SetItemDescription.cs" />
+    <Compile Include="D2\Struct\D2Skill.cs" />
+    <Compile Include="D2\Struct\D2SkillData.cs" />
+    <Compile Include="D2\Struct\D2World.cs" />
+    <Compile Include="D2\Struct\ExpectOffsetAttribute.cs" />
+    <Compile Include="D2\Struct\StatIdentifier.cs" />
+    <Compile Include="D2\Struct\D2StatList.cs" />
+    <Compile Include="D2\Struct\D2StatListEx.cs" />
+    <Compile Include="D2\Struct\D2StringTableInfo.cs" />
+    <Compile Include="D2\Struct\D2UniqueItemDescription.cs" />
+    <Compile Include="D2\Struct\D2Unit.cs" />
+    <Compile Include="D2\Struct\DataPointer.cs" />
+    <Compile Include="Gui\Controls\AutoSplitSettingsRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Controls\AutoSplitSettingsRow.Designer.cs">
+      <DependentUpon>AutoSplitSettingsRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="D2\D2Data.cs" />
+    <Compile Include="D2\D2DataReader.cs" />
+    <Compile Include="D2\Character.cs" />
+    <Compile Include="Gui\Controls\AutoSplitTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Controls\AutoSplitTable.Designer.cs">
+      <DependentUpon>AutoSplitTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Controls\FontComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Gui\Controls\HotkeyControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Gui\DebugWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\DebugWindow.Designer.cs">
+      <DependentUpon>DebugWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="D2\D2Level.cs" />
+    <Compile Include="Gui\Controls\QuestDebugRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Controls\QuestDebugRow.Designer.cs">
+      <DependentUpon>QuestDebugRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Controls\RuneDisplayElement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Controls\RuneDisplayElement.Designer.cs">
+      <DependentUpon>RuneDisplayElement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Serialization\DefaultLegacySettingsResolver.cs" />
+    <Compile Include="Serialization\ILegacySettingsObject.cs" />
+    <Compile Include="Serialization\ILegacySettingsResolver.cs" />
+    <Compile Include="Serialization\ISettingsReader.cs" />
+    <Compile Include="KeyManager.cs" />
+    <Compile Include="Logging\ConsoleLogWriter.cs" />
+    <Compile Include="Logging\FileLogWriter.cs" />
+    <Compile Include="Logging\ILogWriter.cs" />
+    <Compile Include="Logging\Logger.cs" />
+    <Compile Include="Serialization\ISettingsWriter.cs" />
+    <Compile Include="Serialization\JsonLegacySettings.cs" />
+    <Compile Include="Serialization\LegacySettingsObject.cs" />
+    <Compile Include="Serialization\LegacySettingsReader.cs" />
+    <Compile Include="Serialization\JsonSettingsWriter.cs" />
+    <Compile Include="Server\QueryRequest.cs" />
+    <Compile Include="Server\QueryResponse.cs" />
+    <Compile Include="Server\ItemServer.cs" />
+    <Compile Include="ProcessMemoryReader.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server\JsonStreamReader.cs" />
+    <Compile Include="Server\JsonStreamWriter.cs" />
+    <Compile Include="ApplicationSettings.cs" />
+    <Compile Include="Gui\SettingsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\SettingsWindow.Designer.cs">
+      <DependentUpon>SettingsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Serialization\JsonSettingsReader.cs" />
+    <Compile Include="SettingsPersistence.cs" />
+    <Compile Include="VersionChecker.cs" />
+    <EmbeddedResource Include="Gui\Controls\AutoSplitSettingsRow.resx">
+      <DependentUpon>AutoSplitSettingsRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Controls\AutoSplitTable.resx">
+      <DependentUpon>AutoSplitTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\DebugWindow.resx">
+      <DependentUpon>DebugWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Controls\QuestDebugRow.resx">
+      <DependentUpon>QuestDebugRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Controls\RuneDisplayElement.resx">
+      <DependentUpon>RuneDisplayElement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Gui\SettingsWindow.resx">
+      <DependentUpon>SettingsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Images\Runes\runes-high-contrast.png" />
+    <None Include="Resources\Images\Icons\exclamation.png" />
+    <None Include="Resources\Images\Icons\bug.png" />
+    <Content Include="Resources\Diablo II_101.ico" />
+    <EmbeddedResource Include="Resources\ItemStatCost.txt" />
+    <EmbeddedResource Include="Resources\Images\Runes\runes.png" />
+    <None Include="Resources\Images\Icons\disk.png" />
+    <None Include="Resources\Images\Icons\folder_explore.png" />
+    <None Include="Resources\Images\Icons\cross.png" />
+    <None Include="Resources\Images\Icons\wrench_orange.png" />
+    <None Include="Resources\Images\Icons\arrow_refresh.png" />
+    <EmbeddedResource Include="Resources\Levels.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

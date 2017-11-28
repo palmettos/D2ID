@@ -1,0 +1,16 @@
+﻿################################################################################
+# Diese .gitignore-Datei wurde von Microsoft(R) Visual Studio automatisch erstellt.
+################################################################################
+
+/src/DiabloInterface/bin
+/src/DiabloInterface/obj
+/src/.vs
+/src/DiabloInterface/DiabloInterface.csproj.user
+
+/src/tests/bin
+/src/tests/obj
+
+# Recommended ignores for Visual Studio NuGet
+*.nupkg
+**/packages/*
+!**/packages/build/
