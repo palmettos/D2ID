@@ -10,18 +10,14 @@ import traceback
 
 DI_PIPE_BUF_SIZE = 1024
 SIZEOF_INT = sizeof(c_int)
-LOGGING = False
+LOGGING = True
 
 
 class PipeHandler:
 
     def __init__(self, registry):
         self.registry = registry
-
-        # develop branch pipe name
         self.pipe_name = r'\\.\pipe\DiabloInterfaceItems'
-        # master branch pipe name
-        # self.pipe_name = r'\\.\pipe\DiabloInterfaceItems'
 
     def _construct_query(self, json_dict):
         s = json.dumps(json_dict, encoding='utf-8')
@@ -103,7 +99,8 @@ class Diff:
 
 class ItemState:
 
-    def __init__(self):
+    def __init__(self, registry):
+        self.registry = registry
         self.current_state = {}
         for i in range(1, 13):
             self.current_state[i] = None
@@ -139,8 +136,8 @@ class ItemState:
 
 class DirtyItemState(ItemState):
 
-    def __init__(self):
-        ItemState.__init__(self)
+    def __init__(self, registry):
+        ItemState.__init__(self, registry)
         self.last_change = time.clock()
 
     def diff(self, item_set):
@@ -151,10 +148,14 @@ class DirtyItemState(ItemState):
 
 class CleanItemState(ItemState):
 
+    def __init__(self, registry):
+        ItemState.__init__(self, registry)
+
     def diff(self, dirty_state):
-        if dirty_state.time_since_change > 0.25:
+        if dirty_state.time_since_change > 1:
             diff = ItemState.diff(self, dirty_state.current_state.values())
             if diff.length() > 0:
+                self.registry.emit('log', 'read diff')
                 return self.current_state
         return None
 
@@ -178,8 +179,8 @@ class InventoryComparator():
             )
 
             pipe = PipeHandler(self.registry)
-            dirty_state = DirtyItemState()
-            clean_state = CleanItemState()
+            dirty_state = DirtyItemState(self.registry)
+            clean_state = CleanItemState(self.registry)
 
             def update(item_set):
                 dirty_state.diff(item_set)
@@ -193,14 +194,14 @@ class InventoryComparator():
                         continue
                     else:
                         escaped = json.dumps(json.dumps((time.time(), snapshot)))
-                        print 'sending update'
+                        self.registry.emit('log', 'sending update')
                         self.registry.emit('update', escaped)
                 except Exception as e:
                     if LOGGING:
                         with open('error.log', 'a') as log:
                             traceback.print_exc(file=log)
                 finally:
-                    time.sleep(0.05)
+                    time.sleep(0.1)
             self.registry.emit('log', 'Exiting read loop...')
 
         self.loop = Thread(target=diff_loop)

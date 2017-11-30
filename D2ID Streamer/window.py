@@ -33,6 +33,7 @@ class MainWindow(pygubu.TkApplication):
             with open('config', 'r') as conf:
                 self.window_vars['remember'].set(1)
                 self.window_vars['username'].set(conf.readline().strip('\n'))
+                self.window_vars['password'].set(conf.readline().strip('\n'))
         except:
             pass
 
@@ -132,4 +133,5 @@ class MainWindow(pygubu.TkApplication):
     def save_if_remember(self):
         if self.window_vars['remember'].get():
             with open('config', 'w') as conf:
-                conf.write(self.window_vars['username'].get())
+                conf.write(self.window_vars['username'].get() + '\n')
+                conf.write(self.window_vars['password'].get() + '\n')
