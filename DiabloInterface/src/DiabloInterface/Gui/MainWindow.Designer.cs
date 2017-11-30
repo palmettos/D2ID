@@ -68,13 +68,9 @@
             this.labelIasVal = new System.Windows.Forms.Label();
             this.panelResistances = new System.Windows.Forms.TableLayoutPanel();
             this.labelFireResVal = new System.Windows.Forms.Label();
-            this.labelColdResVal = new System.Windows.Forms.Label();
             this.labelLightResVal = new System.Windows.Forms.Label();
             this.labelPoisonResVal = new System.Windows.Forms.Label();
-            this.labelNormPerc = new System.Windows.Forms.Label();
-            this.labelNmPerc = new System.Windows.Forms.Label();
-            this.labelHellPerc = new System.Windows.Forms.Label();
-            this.panelDiffPercentages2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.labelColdResVal = new System.Windows.Forms.Label();
             this.panelDiffPercentages = new System.Windows.Forms.TableLayoutPanel();
             this.normLabel = new System.Windows.Forms.Label();
             this.nmLabel = new System.Windows.Forms.Label();
@@ -82,6 +78,10 @@
             this.normLabelVal = new System.Windows.Forms.Label();
             this.nmLabelVal = new System.Windows.Forms.Label();
             this.hellLabelVal = new System.Windows.Forms.Label();
+            this.panelDiffPercentages2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.labelNormPerc = new System.Windows.Forms.Label();
+            this.labelNmPerc = new System.Windows.Forms.Label();
+            this.labelHellPerc = new System.Windows.Forms.Label();
             this.outerLeftRightPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panelRuneDisplay2 = new System.Windows.Forms.Panel();
             this.contextMenu.SuspendLayout();
@@ -92,8 +92,8 @@
             this.panelBaseStats.SuspendLayout();
             this.panelAdvancedStats.SuspendLayout();
             this.panelResistances.SuspendLayout();
-            this.panelDiffPercentages2.SuspendLayout();
             this.panelDiffPercentages.SuspendLayout();
+            this.panelDiffPercentages2.SuspendLayout();
             this.outerLeftRightPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -251,14 +251,14 @@
             this.debugMenuItem,
             this.exitToolStripMenuItem});
             this.contextMenu.Name = "contextMenu";
-            this.contextMenu.Size = new System.Drawing.Size(161, 92);
+            this.contextMenu.Size = new System.Drawing.Size(159, 92);
             // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Image = global::DiabloInterface.Properties.Resources.wrench_orange;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.U)));
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsMenuItem_Click);
             // 
@@ -267,7 +267,7 @@
             this.resetToolStripMenuItem.Image = global::DiabloInterface.Properties.Resources.arrow_refresh;
             this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
             this.resetToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.resetToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.resetToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.resetToolStripMenuItem.Text = "Reset";
             this.resetToolStripMenuItem.Click += new System.EventHandler(this.resetMenuItem_Click);
             // 
@@ -275,7 +275,7 @@
             // 
             this.debugMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("debugMenuItem.Image")));
             this.debugMenuItem.Name = "debugMenuItem";
-            this.debugMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.debugMenuItem.Size = new System.Drawing.Size(158, 22);
             this.debugMenuItem.Text = "Debug";
             this.debugMenuItem.Click += new System.EventHandler(this.debugMenuItem_Click);
             // 
@@ -283,7 +283,7 @@
             // 
             this.exitToolStripMenuItem.Image = global::DiabloInterface.Properties.Resources.cross;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitMenuItem_Click);
             // 
@@ -605,19 +605,6 @@
             this.labelFireResVal.Text = "-";
             this.labelFireResVal.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // labelColdResVal
-            // 
-            this.labelColdResVal.AutoSize = true;
-            this.labelColdResVal.Font = new System.Drawing.Font("Courier New", 9.75F);
-            this.labelColdResVal.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.labelColdResVal.Location = new System.Drawing.Point(48, 18);
-            this.labelColdResVal.Margin = new System.Windows.Forms.Padding(0);
-            this.labelColdResVal.Name = "labelColdResVal";
-            this.labelColdResVal.Size = new System.Drawing.Size(16, 16);
-            this.labelColdResVal.TabIndex = 12;
-            this.labelColdResVal.Text = "-";
-            this.labelColdResVal.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
             // labelLightResVal
             // 
             this.labelLightResVal.AutoSize = true;
@@ -644,54 +631,18 @@
             this.labelPoisonResVal.Text = "-";
             this.labelPoisonResVal.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // labelNormPerc
+            // labelColdResVal
             // 
-            this.labelNormPerc.AutoSize = true;
-            this.labelNormPerc.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelNormPerc.ForeColor = System.Drawing.Color.White;
-            this.labelNormPerc.Location = new System.Drawing.Point(0, 0);
-            this.labelNormPerc.Margin = new System.Windows.Forms.Padding(0);
-            this.labelNormPerc.Name = "labelNormPerc";
-            this.labelNormPerc.Size = new System.Drawing.Size(48, 16);
-            this.labelNormPerc.TabIndex = 2;
-            this.labelNormPerc.Text = "NO: -";
-            // 
-            // labelNmPerc
-            // 
-            this.labelNmPerc.AutoSize = true;
-            this.labelNmPerc.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelNmPerc.ForeColor = System.Drawing.Color.White;
-            this.labelNmPerc.Location = new System.Drawing.Point(53, 0);
-            this.labelNmPerc.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.labelNmPerc.Name = "labelNmPerc";
-            this.labelNmPerc.Size = new System.Drawing.Size(48, 16);
-            this.labelNmPerc.TabIndex = 2;
-            this.labelNmPerc.Text = "NM: -";
-            // 
-            // labelHellPerc
-            // 
-            this.labelHellPerc.AutoSize = true;
-            this.labelHellPerc.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelHellPerc.ForeColor = System.Drawing.Color.White;
-            this.labelHellPerc.Location = new System.Drawing.Point(106, 0);
-            this.labelHellPerc.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.labelHellPerc.Name = "labelHellPerc";
-            this.labelHellPerc.Size = new System.Drawing.Size(48, 16);
-            this.labelHellPerc.TabIndex = 2;
-            this.labelHellPerc.Text = "HE: -";
-            // 
-            // panelDiffPercentages2
-            // 
-            this.panelDiffPercentages2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelDiffPercentages2.AutoSize = true;
-            this.panelDiffPercentages2.Controls.Add(this.labelNormPerc);
-            this.panelDiffPercentages2.Controls.Add(this.labelNmPerc);
-            this.panelDiffPercentages2.Controls.Add(this.labelHellPerc);
-            this.panelDiffPercentages2.Location = new System.Drawing.Point(3, 146);
-            this.panelDiffPercentages2.Name = "panelDiffPercentages2";
-            this.panelDiffPercentages2.Size = new System.Drawing.Size(367, 16);
-            this.panelDiffPercentages2.TabIndex = 33;
+            this.labelColdResVal.AutoSize = true;
+            this.labelColdResVal.Font = new System.Drawing.Font("Courier New", 9.75F);
+            this.labelColdResVal.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.labelColdResVal.Location = new System.Drawing.Point(48, 18);
+            this.labelColdResVal.Margin = new System.Windows.Forms.Padding(0);
+            this.labelColdResVal.Name = "labelColdResVal";
+            this.labelColdResVal.Size = new System.Drawing.Size(16, 16);
+            this.labelColdResVal.TabIndex = 12;
+            this.labelColdResVal.Text = "-";
+            this.labelColdResVal.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // panelDiffPercentages
             // 
@@ -790,6 +741,55 @@
             this.hellLabelVal.Text = "-";
             this.hellLabelVal.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // panelDiffPercentages2
+            // 
+            this.panelDiffPercentages2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelDiffPercentages2.AutoSize = true;
+            this.panelDiffPercentages2.Controls.Add(this.labelNormPerc);
+            this.panelDiffPercentages2.Controls.Add(this.labelNmPerc);
+            this.panelDiffPercentages2.Controls.Add(this.labelHellPerc);
+            this.panelDiffPercentages2.Location = new System.Drawing.Point(3, 146);
+            this.panelDiffPercentages2.Name = "panelDiffPercentages2";
+            this.panelDiffPercentages2.Size = new System.Drawing.Size(367, 16);
+            this.panelDiffPercentages2.TabIndex = 33;
+            // 
+            // labelNormPerc
+            // 
+            this.labelNormPerc.AutoSize = true;
+            this.labelNormPerc.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelNormPerc.ForeColor = System.Drawing.Color.White;
+            this.labelNormPerc.Location = new System.Drawing.Point(0, 0);
+            this.labelNormPerc.Margin = new System.Windows.Forms.Padding(0);
+            this.labelNormPerc.Name = "labelNormPerc";
+            this.labelNormPerc.Size = new System.Drawing.Size(48, 16);
+            this.labelNormPerc.TabIndex = 2;
+            this.labelNormPerc.Text = "NO: -";
+            // 
+            // labelNmPerc
+            // 
+            this.labelNmPerc.AutoSize = true;
+            this.labelNmPerc.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelNmPerc.ForeColor = System.Drawing.Color.White;
+            this.labelNmPerc.Location = new System.Drawing.Point(53, 0);
+            this.labelNmPerc.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.labelNmPerc.Name = "labelNmPerc";
+            this.labelNmPerc.Size = new System.Drawing.Size(48, 16);
+            this.labelNmPerc.TabIndex = 2;
+            this.labelNmPerc.Text = "NM: -";
+            // 
+            // labelHellPerc
+            // 
+            this.labelHellPerc.AutoSize = true;
+            this.labelHellPerc.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelHellPerc.ForeColor = System.Drawing.Color.White;
+            this.labelHellPerc.Location = new System.Drawing.Point(106, 0);
+            this.labelHellPerc.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.labelHellPerc.Name = "labelHellPerc";
+            this.labelHellPerc.Size = new System.Drawing.Size(48, 16);
+            this.labelHellPerc.TabIndex = 2;
+            this.labelHellPerc.Text = "HE: -";
+            // 
             // outerLeftRightPanel
             // 
             this.outerLeftRightPanel.AutoSize = true;
@@ -831,7 +831,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "MainWindow";
             this.Text = "DiabloInterface";
             this.Load += new System.EventHandler(this.MainWindow_Load);
@@ -849,10 +848,10 @@
             this.panelAdvancedStats.PerformLayout();
             this.panelResistances.ResumeLayout(false);
             this.panelResistances.PerformLayout();
-            this.panelDiffPercentages2.ResumeLayout(false);
-            this.panelDiffPercentages2.PerformLayout();
             this.panelDiffPercentages.ResumeLayout(false);
             this.panelDiffPercentages.PerformLayout();
+            this.panelDiffPercentages2.ResumeLayout(false);
+            this.panelDiffPercentages2.PerformLayout();
             this.outerLeftRightPanel.ResumeLayout(false);
             this.outerLeftRightPanel.PerformLayout();
             this.ResumeLayout(false);

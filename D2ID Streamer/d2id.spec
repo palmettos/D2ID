@@ -19,7 +19,7 @@ a = Analysis(
     ['main.py'],
     pathex=['C:\\Python27\\Lib\\site-packages\\'],
     binaries=[],
-    datas=[('window.ui', '.'),],
+    datas=[],
     hiddenimports=hidden_imports,
     hookspath=[],
     runtime_hooks=[],

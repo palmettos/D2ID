@@ -1,4 +1,5 @@
 *.pyc
+*.ico
 error.log
 config
 build/
