@@ -8,7 +8,7 @@ icon = tk.PhotoImage(file='./d2id.ico')
 root.tk.call('wm', 'iconphoto', root._w, icon)
 app = MainWindow(root)
 
-with open('error.log', 'a') as log:
+with open('error.log', 'w') as log:
     log.write('-' * 80 + '\n')
     log.write(time.strftime('%m-%d-%Y @ %H:%M:%S\n'))
     log.write('-' * 80 + '\n')
