@@ -118,7 +118,7 @@ namespace DiabloInterface
             var inventoryReader = new InventoryReader(reader, memory);
 
             // Add all items found in the slots.
-            Func<D2ItemData, bool> filterSlots = data => slots.FindIndex(x => x == data.BodyLoc) >= 0;
+            Func<D2ItemData, bool> filterSlots = data => slots.FindIndex(x => x == data.BodyLoc && data.InvPage == InventoryPage.Equipped) >= 0;
             foreach (var item in inventoryReader.EnumerateInventory(filterSlots))
             {
                 if (action != null)

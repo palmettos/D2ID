@@ -228,6 +228,7 @@ class CleanItemState(ItemState):
             err.add_line('Diff length: ' + str(diff.length()))
             if diff.length() > 0:
                 err.add_line('Diff length > 0, returning current state')
+                print str(self.current_state)
                 return self.current_state
         err.add_line('No changes, returning None')
         err.timestamp()

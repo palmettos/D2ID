@@ -3,7 +3,7 @@ from websocket import WebSocketApp
 import traceback
 import logging
 
-CLIENT_VERSION = '1.0.0'
+CLIENT_VERSION = '0.1.4'
 
 BASE_URL = 'wss://d2id.multilurk.tv'
 UPDATE = '/update'

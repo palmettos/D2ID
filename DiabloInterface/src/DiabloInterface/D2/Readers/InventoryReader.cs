@@ -57,8 +57,11 @@ namespace DiabloInterface.D2.Readers
 
             // Traverse the linked list of inventory items.
             var item = GetUnit(inventory.pLastItem);
+            // Console.WriteLine("---------------------------------");
             for (; item != null; item = GetPreviousItem(item))
             {
+                var itemData = itemReader.GetItemData(item);
+                // Console.WriteLine("BodyLoc: {0}, Page: {1}", itemData.BodyLoc, itemData.InvPage);
                 yield return item;
             }
         }
